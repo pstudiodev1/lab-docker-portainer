@@ -5,11 +5,11 @@ services:
         restart: unless-stopped
         image: portainer/portainer
         volumes: 
-            - portainer_data:/data
+            - portainer_vol:/data
             - /var/run/docker.sock:/var/run/docker.sock
         environment: 
             VIRTUAL_HOST: ${DOMAINS}
         ports: 
             - "9000:9000"
 volumes: 
-    portainer_data:
+    portainer_vol:
